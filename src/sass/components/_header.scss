@@ -1,0 +1,85 @@
+header {
+  display: block;
+  width: 100%;
+  background-color: $almost-black;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: $almost-white;
+  padding: 1rem .5rem;
+}
+
+.header-wrapper .header-logo {
+  a {
+    text-decoration: none;
+    font-family: $font-monospace;
+    text-transform: lowercase;
+    font-size: 2rem;
+    color: inherit;
+  }
+}
+
+.header-wrapper .header-desktop-nav {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  ul li {
+    display: inline-block;
+
+    &:not(:last-of-type) {
+      margin-right: 1rem;
+    }
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.header-wrapper .header-mobile-nav {
+  display: block;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.header-wrapper .header-mobile-nav .mobile-nav-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: 100%;
+  width: 32px;
+
+  &__bar {
+    display: block;
+    width: 90%;
+    height: 3px;
+    background-color: $almost-white;
+
+    &:not(:last-of-type) {
+      margin-bottom: 5px;
+    }
+
+    &:first-of-type {
+      width: 100%;
+    }
+
+    &:last-of-type {
+      width: 80%;
+    }
+  }
+}

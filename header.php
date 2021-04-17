@@ -34,21 +34,30 @@ if ( ! defined ( 'ABSPATH' ) ) {
 </head>
 <body>
   <header>
-    <div class="header-wrapper">
-      <div class="header-logo">
-        <a href="<?php esc_url( home_url() ); ?>">Mikael Eriksson</a>
+    <div class="container">
+      <div class="header-wrapper">
+        <div class="header-logo">
+          <a href="<?php esc_url( home_url() ); ?>">mikaeleriksson.nu</a>
+        </div>
+        <div class="header-desktop-nav">
+          <nav>
+            <?php
+              $nav_args = [
+                'menu'      => 'primary',
+                'container' => false,
+                'echo'      => true,
+              ];
+              wp_nav_menu( $nav_args );
+            ?>
+          </nav>
+        </div>
+        <div class="header-mobile-nav">
+          <div class="mobile-nav-toggle" id="js-mobile-nav-toggle">
+            <span class="mobile-nav-toggle__bar"></span>
+            <span class="mobile-nav-toggle__bar"></span>
+            <span class="mobile-nav-toggle__bar"></span>
+          </div>
+        </div>
       </div>
-      <dev class="header-nav">
-        <nav>
-          <?php
-            $nav_args = [
-              'menu'      => 'primary',
-              'container' => false,
-              'echo'      => true,
-            ];
-            wp_nav_menu( $nav_args );
-          ?>
-        </nav>
-      </dev>
     </div>
   </header>
